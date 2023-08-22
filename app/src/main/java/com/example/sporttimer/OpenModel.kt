@@ -9,9 +9,6 @@ open class OpenModel: ViewModel() {
     val allTime: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()
     }
-    val switch1Status: MutableLiveData<Boolean> by lazy {
-        MutableLiveData<Boolean>()
-    }
 
     val workTime: MutableLiveData<Int> by lazy {
         MutableLiveData<Int>()

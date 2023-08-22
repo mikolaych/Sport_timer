@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@drawable/backgound"
     tools:context=".MainWindow">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -176,7 +176,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/convButton"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="17dp"
             android:background="@color/black"
             android:text="В минуты"
             android:layout_marginTop="5dp"
@@ -204,8 +204,37 @@
             app:layout_constraintStart_toStartOf="@+id/convButton"
             app:layout_constraintTop_toBottomOf="@+id/convButton" />
 
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/mute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:checked="true"
+            android:visibility="invisible"
+            android:button="@drawable/checkbox_selector"
+            app:layout_constraintBottom_toBottomOf="@+id/statWorkTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/statWorkTime" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/back"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/conv2" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Назад"
+            android:textSize="15sp"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginStart="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/backButton"
+            app:layout_constraintStart_toEndOf="@+id/backButton"
+            app:layout_constraintTop_toTopOf="@+id/backButton" />
 
 
 
