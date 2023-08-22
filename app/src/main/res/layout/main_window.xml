@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainWindow">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tittleAllTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Общее время, мин:"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/allTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tittleAllTime"
+            app:layout_constraintStart_toEndOf="@+id/tittleAllTime"
+            app:layout_constraintTop_toTopOf="@+id/tittleAllTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tittleWorkTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Время упражнения, сек:"
+            android:textColor="@color/white"
+            android:layout_marginTop="10dp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tittleAllTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/workTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tittleWorkTime"
+            app:layout_constraintStart_toEndOf="@+id/tittleWorkTime"
+            app:layout_constraintTop_toTopOf="@+id/tittleWorkTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tittleRestTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="Время отдыха, сек:"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tittleWorkTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/restTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tittleRestTime"
+            app:layout_constraintStart_toEndOf="@+id/tittleRestTime"
+            app:layout_constraintTop_toTopOf="@+id/tittleRestTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textSize="30sp"
+            android:textColor="@android:color/holo_red_dark"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/tittleRestTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/holo_orange_light"
+            android:textSize="60sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/info" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonWork"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/round_button"
+            android:padding="10dp"
+            android:text="Work"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timer" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonRest"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:background="@drawable/round_button"
+            android:padding="10dp"
+            android:visibility="invisible"
+            android:text="Rest"
+            android:textColor="@color/white"
+            android:textSize="40sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/timer" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tittleStatWorkTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="Общее время упражнений, сек:"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonWork" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/statWorkTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tittleStatWorkTime"
+            app:layout_constraintStart_toEndOf="@+id/tittleStatWorkTime"
+            app:layout_constraintTop_toTopOf="@+id/tittleStatWorkTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tittleRestWorkTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Общее время отдыха, сек:"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tittleStatWorkTime" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/statRestTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/tittleRestWorkTime"
+            app:layout_constraintStart_toEndOf="@+id/tittleRestWorkTime"
+            app:layout_constraintTop_toTopOf="@+id/tittleRestWorkTime" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/convButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:text="В минуты"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="@+id/tittleRestWorkTime"
+            app:layout_constraintStart_toStartOf="@+id/tittleRestWorkTime"
+            app:layout_constraintTop_toBottomOf="@+id/tittleRestWorkTime" />
+
+        <TextView
+            android:id="@+id/conv1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="@+id/convButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/convButton" />
+
+        <TextView
+            android:id="@+id/conv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@android:color/holo_red_dark"
+            app:layout_constraintEnd_toEndOf="@+id/convButton"
+            app:layout_constraintStart_toStartOf="@+id/convButton"
+            app:layout_constraintTop_toBottomOf="@+id/convButton" />
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
