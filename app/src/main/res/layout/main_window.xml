@@ -216,28 +216,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/statWorkTime" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/back"
-            android:textColor="@color/white"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/conv2" />
-
-        <androidx.appcompat.widget.AppCompatTextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Назад"
-            android:textSize="15sp"
-            android:textColor="@android:color/holo_red_dark"
-            android:layout_marginStart="5dp"
-            app:layout_constraintBottom_toBottomOf="@+id/backButton"
-            app:layout_constraintStart_toEndOf="@+id/backButton"
-            app:layout_constraintTop_toTopOf="@+id/backButton" />
-
-
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

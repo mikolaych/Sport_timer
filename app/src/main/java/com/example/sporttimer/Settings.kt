@@ -69,6 +69,7 @@ class Settings : Fragment() {
                         openModel.workTime.value = inputTimeWork.text.toString().toInt()
                         openModel.restTime.value = inputTimeToRest.text.toString().toInt()
                         parentFragmentManager.beginTransaction().replace(R.id.fragment, MainWindow()).commit()
+                        parentFragmentManager.beginTransaction().remove(this@Settings).commit()
                     }
 
                 }

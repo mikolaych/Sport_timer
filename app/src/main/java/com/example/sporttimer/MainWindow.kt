@@ -68,8 +68,7 @@ class MainWindow : Fragment() {
         convertInMin()
         //Звук вкл/выкл
         muteOnOff()
-        //Назад
-        backButton()
+
 
     }
 
@@ -185,28 +184,6 @@ class MainWindow : Fragment() {
             } else {
                 alarmStop()
             }
-        }
-    }
-
-    private fun backButton() {
-        binding.backButton.setOnClickListener {
-            //Очистка
-            binding.apply {
-                allTime.text = null
-                workTime.text = null
-                restTime.text = null
-                statWorkTime.text = null
-                statRestTime.text = null
-                alarmStop()
-
-                openModel.allTime.value = 0
-                openModel.workTime.value = 0
-                openModel.restTime.value = 0
-
-                parentFragmentManager.beginTransaction().replace(R.id.fragment, Settings()).commit()
-
-            }
-
         }
     }
 
