@@ -192,13 +192,15 @@
             android:textColor="@android:color/holo_red_dark"
             app:layout_constraintEnd_toEndOf="@+id/convButton"
             app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
             app:layout_constraintTop_toBottomOf="@+id/convButton" />
 
         <TextView
             android:id="@+id/conv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
             android:textColor="@android:color/holo_red_dark"
             app:layout_constraintEnd_toEndOf="@+id/convButton"
             app:layout_constraintStart_toStartOf="@+id/convButton"
@@ -215,6 +217,29 @@
             app:layout_constraintBottom_toBottomOf="@+id/statWorkTime"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/statWorkTime" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/tittleTimeToTraining"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Общее время:"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toBottomOf="@+id/conv2" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/fullTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20"
+            android:layout_marginTop="10dp"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tittleTimeToTraining" />
+
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

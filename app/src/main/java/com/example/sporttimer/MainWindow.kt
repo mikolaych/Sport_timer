@@ -68,25 +68,41 @@ class MainWindow : Fragment() {
         convertInMin()
         //Звук вкл/выкл
         muteOnOff()
+        //Общий таймер
+        fullTimer()
 
 
     }
 
+    private fun fullTimer() {
+        var timer = object : CountDownTimer(1000000.toLong() * 1000, 1000){
+            override fun onTick(p0: Long) {
+                binding.fullTimer.text = (1000000 - (p0 / 1000)).toString()
 
+            }
+
+            override fun onFinish() {
+               alarmStop()
+            }
+
+        }.start()
+    }
 
 
     private fun convertInMin() {
         binding.convButton.setOnClickListener {
             if (binding.statWorkTime.text.isNullOrEmpty() && binding.statRestTime.text.isNullOrEmpty()){
-                binding.conv1.text = "0"
-                binding.conv2.text = "0"
+                binding.conv1.text = null
+                binding.conv2.text = null
             } else if (!binding.statWorkTime.text.isNullOrEmpty() && binding.statRestTime.text.isNullOrEmpty()){
                 binding.conv1.text = (binding.statWorkTime.text.toString().toInt() / 60).toString()
-                binding.conv2.text = "0"
+                binding.conv2.text = null
             }
             else {
-                binding.conv1.text = (binding.statWorkTime.text.toString().toInt() / 60).toString()
-                binding.conv2.text = (binding.statRestTime.text.toString().toInt() / 60).toString()
+                var con1: Float = binding.statWorkTime.text.toString().toFloat() / 60
+                var con2: Float = binding.statRestTime.text.toString().toFloat() / 60
+                binding.conv1.text = String.format("%.1f",con1).toString()
+                binding.conv2.text = String.format("%.1f",con2).toString()
             }
         }
     }
