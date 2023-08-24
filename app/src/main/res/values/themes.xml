@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.SportTimer" parent="Base.Theme.SportTimer" />
+
 </resources>

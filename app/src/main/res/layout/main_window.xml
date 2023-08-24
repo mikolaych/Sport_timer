@@ -61,7 +61,7 @@
             android:id="@+id/plusWorkTime"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="15dp"
             android:background="@drawable/plus_time"
             app:layout_constraintBottom_toBottomOf="@+id/workTime"
             app:layout_constraintEnd_toStartOf="@+id/workTime"
@@ -71,7 +71,7 @@
             android:id="@+id/minusWorkTime"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="15dp"
             android:background="@drawable/minus_time"
             app:layout_constraintBottom_toBottomOf="@+id/workTime"
             app:layout_constraintStart_toEndOf="@+id/workTime"
@@ -104,7 +104,7 @@
             android:id="@+id/plusRestTime"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="30dp"
+            android:layout_marginEnd="15dp"
             android:background="@drawable/plus_time"
             app:layout_constraintBottom_toBottomOf="@+id/restTime"
             app:layout_constraintEnd_toStartOf="@+id/restTime"
@@ -114,7 +114,7 @@
             android:id="@+id/minusRestTime"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="30dp"
+            android:layout_marginStart="15dp"
             android:background="@drawable/minus_time"
             app:layout_constraintBottom_toBottomOf="@+id/restTime"
             app:layout_constraintStart_toEndOf="@+id/restTime"
@@ -134,7 +134,7 @@
             android:id="@+id/timer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:gravity="center"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="50sp"
@@ -161,7 +161,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:text="@string/tittle_start_work_time"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
@@ -183,7 +183,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="@string/tittle_rest_work_time"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
@@ -204,7 +204,7 @@
             android:id="@+id/convButton"
             android:layout_width="wrap_content"
             android:layout_height="28dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button_in_min"
             android:padding="4dp"
             android:text="@string/conv_button"
@@ -229,7 +229,7 @@
             android:id="@+id/conv2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:textColor="@android:color/holo_orange_light"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -249,17 +249,6 @@
             app:layout_constraintTop_toTopOf="@+id/statWorkTime" />
 
         <androidx.appcompat.widget.AppCompatTextView
-            android:id="@+id/tittleTimeToTraining"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="@string/time_to_training"
-            android:textColor="@color/white"
-            android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@+id/conv2" />
-
-        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/fullTimer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -268,7 +257,7 @@
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tittleTimeToTraining" />
+            app:layout_constraintTop_toBottomOf="@+id/divider" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/convertTimer"
@@ -281,6 +270,23 @@
             app:layout_constraintStart_toEndOf="@+id/conv2"
             app:layout_constraintTop_toTopOf="@+id/conv2" />
 
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="#6b0001"
+            app:layout_constraintTop_toBottomOf="@+id/conv2"
+            tools:layout_editor_absoluteX="1dp" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="#6b0001"
+            app:layout_constraintTop_toBottomOf="@+id/minusWorkTime"
+            tools:layout_editor_absoluteX="1dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
