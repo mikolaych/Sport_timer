@@ -61,7 +61,7 @@
             android:id="@+id/plusWorkTime"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="30dp"
             android:background="@drawable/plus_time"
             app:layout_constraintBottom_toBottomOf="@+id/workTime"
             app:layout_constraintEnd_toStartOf="@+id/workTime"
@@ -71,7 +71,7 @@
             android:id="@+id/minusWorkTime"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="30dp"
             android:background="@drawable/minus_time"
             app:layout_constraintBottom_toBottomOf="@+id/workTime"
             app:layout_constraintStart_toEndOf="@+id/workTime"
@@ -104,7 +104,7 @@
             android:id="@+id/plusRestTime"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="30dp"
             android:background="@drawable/plus_time"
             app:layout_constraintBottom_toBottomOf="@+id/restTime"
             app:layout_constraintEnd_toStartOf="@+id/restTime"
@@ -114,7 +114,7 @@
             android:id="@+id/minusRestTime"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="30dp"
             android:background="@drawable/minus_time"
             app:layout_constraintBottom_toBottomOf="@+id/restTime"
             app:layout_constraintStart_toEndOf="@+id/restTime"
@@ -248,7 +248,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/statWorkTime" />
 
-        <androidx.appcompat.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tittleTimeToTraining"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
