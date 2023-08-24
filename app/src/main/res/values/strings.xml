@@ -1,7 +1,6 @@
 <resources>
-    <string name="app_name">Sport Timer</string>
+    <string name="app_name">Kiokushin Timer</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tittle_all_time">Человек в упражнении:</string>
     <string name="tittle_time_work">Время упражнения, сек:</string>
     <string name="tittle_time_to_rest">Время отдыха, сек:</string>
