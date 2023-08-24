@@ -18,36 +18,40 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:gravity="center"
-            android:text="Введите общее время, мин:"
+            android:text="@string/tittle_all_time"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/inputAllTime"
-            android:layout_width="100dp"
-            android:visibility="invisible"
-            android:inputType="number"
+        <com.google.android.material.slider.Slider
+            android:id="@+id/slider"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:contentDescription="@string/slider_description"
+            android:stepSize="1"
+            android:value="1"
             android:layout_marginTop="20dp"
-            android:background="#6b0001"
-            android:textColor="@color/white"
-            android:gravity="center"
-            android:textSize="20sp"
-            app:layout_constraintStart_toStartOf="parent"
+            app:thumbColor="#6b0001"
+            app:thumbStrokeColor="@color/white"
+            app:thumbStrokeWidth="2dp"
+            app:trackColor="@color/white"
+            app:labelBehavior="floating"
+            app:thumbRadius="10dp"
+            android:valueFrom="1"
+            android:valueTo="4"
             app:layout_constraintTop_toBottomOf="@+id/tittleAllTime" />
+
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tittleTimeToWork"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:layout_marginTop="20dp"
-            android:text="Время упражнения, сек:"
+            android:text="@string/tittle_time_work"
             android:textColor="@color/white"
             android:textSize="20sp"
-            app:layout_constraintTop_toBottomOf="@+id/inputAllTime" />
+            app:layout_constraintTop_toBottomOf="@+id/slider" />
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/inputTimeWork"
@@ -55,10 +59,11 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:inputType="number"
+            android:contentDescription="@string/timeWork_description"
             android:layout_marginTop="20dp"
             android:background="#6b0001"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="40sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tittleTimeToWork" />
@@ -69,7 +74,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Время отдыха, сек:"
+            android:text="@string/tittle_time_to_rest"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/inputTimeWork" />
@@ -79,10 +84,11 @@
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:contentDescription="@string/timeRest_description"
             android:inputType="number"
             android:background="#6b0001"
             android:textColor="@color/white"
-            android:textSize="30sp"
+            android:textSize="40sp"
             android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -99,28 +105,16 @@
             android:textSize="20sp"
             app:layout_constraintTop_toBottomOf="@+id/inputTimeToRest" />
 
-        <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/switch1"
-            style="@style/TextAppearance.AppCompat.Widget.Switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
-            android:text="Бесконечно"
-            android:checked="true"
-            android:padding="5dp"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="@+id/inputAllTime"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/inputAllTime" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonSaveSettings"
             android:layout_width="wrap_content"
             android:background="@drawable/round_button"
-            android:text="Сохранить"
+            android:text="@string/button_save"
             android:padding="15dp"
             android:textColor="@color/white"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:textSize="20sp"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"

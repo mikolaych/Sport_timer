@@ -7,8 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import com.example.sporttimer.databinding.SettingsBinding
+import com.google.android.material.slider.Slider
 
 private var checkStatus = true
+private var numberOfHumans = 1
 
 class Settings : Fragment() {
     private lateinit var binding: SettingsBinding
@@ -26,48 +28,36 @@ class Settings : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //Переключатель общего времени
-        switchAllTime()
+
+
 
         //Сохранение данных
         saveButton()
+        //Выбор количества человек
+        slide()
 
 
 
 
     }
 
-    private fun switchAllTime() {
-        binding.switch1.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (!isChecked) {
-                checkStatus = false
-                binding.inputAllTime.visibility = View.VISIBLE
-            }
-            else {
-                checkStatus = true
-                binding.inputAllTime.visibility = View.INVISIBLE
-                binding.inputAllTime.text = null
-            }
-        }
-    }
+
 
     private fun saveButton() {
         binding.apply {
             buttonSaveSettings.setOnClickListener {
-                if (!switch1.isChecked && inputAllTime.text.isNullOrEmpty()){
-                    info.text = "Введите общее время!"
-                } else if (inputTimeWork.text.isNullOrEmpty() || inputTimeToRest.text.isNullOrEmpty()) {
+               if (inputTimeWork.text.isNullOrEmpty() || inputTimeToRest.text.isNullOrEmpty()) {
                     info.text = "Заполните поля!"
                 }  else {
                     if (!checkStatus){
-                        openModel.allTime.value = inputAllTime.text.toString().toInt()
                         openModel.workTime.value = inputTimeWork.text.toString().toInt()
                         openModel.restTime.value = inputTimeToRest.text.toString().toInt()
+                        openModel.numberOfHuman.value = slider.value.toInt()
                         parentFragmentManager.beginTransaction().replace(R.id.fragment, MainWindow()).commit()
                     } else {
-                        openModel.allTime.value = 0
                         openModel.workTime.value = inputTimeWork.text.toString().toInt()
                         openModel.restTime.value = inputTimeToRest.text.toString().toInt()
+                        openModel.numberOfHuman.value = slider.value.toInt()
                         parentFragmentManager.beginTransaction().replace(R.id.fragment, MainWindow()).commit()
                         parentFragmentManager.beginTransaction().remove(this@Settings).commit()
                     }
@@ -75,6 +65,45 @@ class Settings : Fragment() {
                 }
             }
         }
+    }
+
+    private fun slide() {
+        binding.apply {
+
+            slider.addOnSliderTouchListener(object : Slider.OnSliderTouchListener {
+                override fun onStartTrackingTouch(slider: Slider) {
+                    when (slider.value) {
+                        1f ->info.text = "1 человек"
+                        2f ->info.text = "2 человека"
+                        3f ->info.text = "3 человека"
+                        4f ->info.text = "4 человека"
+                    }
+                }
+                override fun onStopTrackingTouch(slider: Slider) {
+                    when (slider.value) {
+                        1f -> {
+                            numberOfHumans = 1
+                            info.text = "1 человек"
+                        }
+                        2f -> {
+                            numberOfHumans = 2
+                            info.text = "2 человека"
+                        }
+                        3f -> {
+                            numberOfHumans = 3
+                            info.text = "3 человека"
+                        }
+                        4f -> {
+                            numberOfHumans = 4
+                            info.text = "4 человека"
+                        }
+                    }
+                }
+            })
+
+        }
+
+
     }
 
 
