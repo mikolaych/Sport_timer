@@ -14,7 +14,7 @@ import com.example.sporttimer.databinding.MainWindowBinding
 //Входящие данные
   var timeToWork = 0
   var timeToRest = 0
-  var numberOfHuman = 1
+  var numberOfHumanses = 1
 
 //Свои переменные
 var workTimePlus: Long = 0
@@ -45,7 +45,7 @@ class MainWindow : Fragment() {
 
         //LifeData
         openModel.numberOfHuman.observe(activity as LifecycleOwner) {
-            numberOfHuman = it
+            numberOfHumanses = it
         }
         openModel.workTime.observe(activity as LifecycleOwner) {
             timeToWork = it
@@ -63,6 +63,8 @@ class MainWindow : Fragment() {
         muteOnOff()
         //Общий таймер
         fullTimer()
+        // +/- люди
+        plusMinusHumans()
         // +/- время работы
         plusMinusWorkTime()
         // +/- время отдыха
@@ -72,8 +74,8 @@ class MainWindow : Fragment() {
 
         var numberOfCycle = 0
         binding.buttonWork.setOnClickListener {
-            if (numberOfCycle < numberOfHuman) {
-                work(numberOfCycle, numberOfHuman)
+            if (numberOfCycle < numberOfHumanses) {
+                work(numberOfCycle, numberOfHumanses)
                 numberOfCycle++
             } else {
                 rest()
@@ -123,7 +125,7 @@ class MainWindow : Fragment() {
 
     //Запись данных о тренировке
     private fun inputData() {
-            binding.numberOfHuman.text = numberOfHuman.toString()
+            binding.numberOfHuman.text = numberOfHumanses.toString()
             binding.workTime.text = timeToWork.toString()
             binding.restTime.text = timeToRest.toString()
 
@@ -241,6 +243,28 @@ class MainWindow : Fragment() {
                 restTime.text = timeToRest.toString()
             }
         }
+    }
+
+    private fun plusMinusHumans() {
+        binding.apply {
+            plusHumans.setOnClickListener {
+                if (numberOfHumanses < 4) {
+                    numberOfHumanses+=1
+                    numberOfHuman.text = numberOfHumanses.toString()
+                }
+            }
+            minusHumans.setOnClickListener {
+                if (numberOfHumanses > 0) {
+                    numberOfHumanses-=1
+                    numberOfHuman.text = numberOfHumanses.toString()
+                }
+            }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        alarm(false)
     }
 
 
