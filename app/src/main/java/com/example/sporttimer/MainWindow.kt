@@ -151,9 +151,9 @@ class MainWindow : Fragment() {
                                mute.visibility = View.VISIBLE
                                timer.text = null
                                if ((cycleNumber+1) == numberOfHuman) {
-                                   info.text = "Следующее: отдых"
+                                   info.text = "След. отдых"
                                } else {
-                                   info.text = "Следующее: проход № ${cycleNumber + 2}"
+                                   info.text = "След. проход № ${cycleNumber + 2}"
                                }
                                binding.mute.isChecked = true
                                alarm(true)
@@ -182,7 +182,7 @@ class MainWindow : Fragment() {
                         statRestTime.text = restTimePlus.toString()
                         mute.visibility = View.VISIBLE
                         timer.text = null
-                        info.text = "Следующее: проход № 1"
+                        info.text = "След. проход № 1"
                         binding.mute.isChecked = true
                         alarm(true)
                     }
@@ -225,9 +225,11 @@ class MainWindow : Fragment() {
                 timeToWork+=10
                 workTime.text = timeToWork.toString()
             }
-            minusWorkTime.setOnClickListener {
-                timeToWork-=10
-                workTime.text = timeToWork.toString()
+                minusWorkTime.setOnClickListener {
+                    if (timeToWork > 10) {
+                    timeToWork -= 10
+                    workTime.text = timeToWork.toString()
+                }
             }
         }
     }
@@ -238,9 +240,11 @@ class MainWindow : Fragment() {
                 timeToRest+=10
                 restTime.text = timeToRest.toString()
             }
-            minusRestTime.setOnClickListener {
-                timeToRest-=10
-                restTime.text = timeToRest.toString()
+                minusRestTime.setOnClickListener {
+                    if (timeToRest > 10) {
+                    timeToRest -= 10
+                    restTime.text = timeToRest.toString()
+                }
             }
         }
     }
@@ -254,7 +258,7 @@ class MainWindow : Fragment() {
                 }
             }
             minusHumans.setOnClickListener {
-                if (numberOfHumanses > 0) {
+                if (numberOfHumanses > 1) {
                     numberOfHumanses-=1
                     numberOfHuman.text = numberOfHumanses.toString()
                 }
